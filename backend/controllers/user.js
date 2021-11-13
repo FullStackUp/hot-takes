@@ -25,8 +25,9 @@ exports.signup = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
+    const cryptedResearchedEmail = cryptojs.HmacSHA256(req.body.email, process.env.EMAIL_SECRET_KEY).toString();
     //pour trouver seulement 1 utilsateur (l'utilisateur unique via le l'adresse email unique)
-    User.findOne({ email: req.body.email })
+    User.findOne({ email: cryptedResearchedEmail })
         .then(user => {
             if (!user) {
                 return res.status(401).json({ error: 'Utilisateur non trouvé !' });
