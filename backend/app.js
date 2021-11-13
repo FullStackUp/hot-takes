@@ -13,7 +13,7 @@ require('dotenv').config();
 
 //Permet de connecter l'application à mongodb
 mongoose
-.connect(process.env.SECRET_MONGODB,
+.connect(process.env.MONGODB_SECRET_KEY,
     { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

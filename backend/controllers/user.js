@@ -1,6 +1,10 @@
 const User = require('../models/User');
+
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cryptojs = require('crypto-js');
+
+require('dotenv').config();
 
 
 exports.signup = (req, res, next) => {
@@ -8,7 +12,8 @@ exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
-                email: req.body.email,
+                // cryptage de l'email
+                email: cryptojs.HmacSHA256(req.body.email, process.env.EMAIL_SECRET_KEY).toString(),
                 password: hash
             });
             //save permet d'enregistrer dans la base de donné
@@ -43,7 +48,7 @@ exports.login = (req, res, next) => {
                         token: jwt.sign(
                             { userId: user._id },
                             //nous utilisons une chaîne"RANDOM_" pour encoder notre token
-                            'RANDOM_TOKEN_SECRET',
+                            process.env.TOKEN_SECRET_KEY,
                             //durée de validité du token à 24 heures
                             { expiresIn: '24h' }
                         )
