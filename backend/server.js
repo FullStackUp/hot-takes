@@ -2,7 +2,6 @@
 
 const http = require('http');
 const app = require('./app');  
-require('dotenv').config();
 
 // Pour résoudre une erreur inconnue lors de la création d'un user depuis le front.
 const cors = require('cors');

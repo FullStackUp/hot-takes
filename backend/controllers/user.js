@@ -2,8 +2,6 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-require('dotenv').config();
-
 
 exports.signup = (req, res, next) => {
     //hasher le mdp par méthode asynchrone
@@ -45,7 +43,7 @@ exports.login = (req, res, next) => {
                         token: jwt.sign(
                             { userId: user._id },
                             //nous utilisons une chaîne"RANDOM_" pour encoder notre token
-                            process.env.SECRET_TOKEN,
+                            'RANDOM_TOKEN_SECRET',
                             //durée de validité du token à 24 heures
                             { expiresIn: '24h' }
                         )
