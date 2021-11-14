@@ -29,3 +29,8 @@ Sur Windows, ces installations requière d'utiliser PowerShell en mode administr
 - Si necessaire installer express : `npm install express` (si il y a une erreur).
 
 Sur Mac, il ne faut pas oublier de mettre "sudo" devant "npm" pour ces types d'installations, par exemple : "sudo npm install express".
+
+
+##### Remarque ######
+
+Le fichier `.env` (qui contient les SECRET_KEY) ainsi que le dossier `images` ne sont volontairement pas misent dans le `.gitignore` pour permettre à l'application d'être fonctionnel par d'autres Utilisateur.
