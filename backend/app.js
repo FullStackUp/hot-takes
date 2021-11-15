@@ -10,6 +10,8 @@ const sauceRoutes = require('./routes/sauce');
 //pour la sécurité des liens
 require('dotenv').config();
 
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 //Permet de connecter l'application à mongodb
 mongoose
@@ -34,6 +36,16 @@ app.use((req, res, next) => {
   });
   
 app.use(bodyParser.json());
+
+//Sécurite en plus :
+app.use(helmet());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limite chaque IP de 100 requête 
+});
+//  applique sur toute les requêtes
+app.use(limiter);
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
