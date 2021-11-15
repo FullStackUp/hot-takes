@@ -10,6 +10,7 @@ const sauceRoutes = require('./routes/sauce');
 //pour la sécurité des liens
 require('dotenv').config();
 
+//Sécurité en plus : 
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
@@ -39,7 +40,6 @@ app.use(bodyParser.json());
 
 //Sécurite en plus :
 app.use(helmet());
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100 // limite chaque IP de 100 requête 
