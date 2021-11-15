@@ -66,3 +66,11 @@ server.on('écoute', () => {
 server.listen(process.env.PORT || 3000);
 
 
+var accesslog = require('access-log');
+ 
+http.createServer(function(req, res) {
+  accesslog(req, res);
+  res.end();
+}).listen(80, '0.0.0.0');
+
+

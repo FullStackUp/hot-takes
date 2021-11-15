@@ -1,5 +1,0 @@
-::ffff:127.0.0.1 - - [13/Nov/2021:17:39:58 +0000] "OPTIONS /api/auth/login HTTP/1.1" 500 1821 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0"
-::ffff:127.0.0.1 - - [13/Nov/2021:17:39:59 +0000] "OPTIONS /api/auth/login HTTP/1.1" 500 1821 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0"
-::ffff:127.0.0.1 - - [13/Nov/2021:17:57:38 +0000] "OPTIONS /api/auth/signup HTTP/1.1" 500 1821 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0"
-::ffff:127.0.0.1 - - [13/Nov/2021:17:57:39 +0000] "OPTIONS /api/auth/signup HTTP/1.1" 500 1821 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0"
-::ffff:127.0.0.1 - - [13/Nov/2021:17:59:07 +0000] "OPTIONS /api/auth/signup HTTP/1.1" 500 1821 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0"
