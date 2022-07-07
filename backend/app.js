@@ -14,7 +14,6 @@ require('dotenv').config();
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
-
 //Permet de connecter l'application à mongodb
 mongoose
 .connect(process.env.MONGODB_SECRET_KEY,
@@ -45,7 +44,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100 // limite chaque IP de 100 requête 
 });
-//applique sur toute les requêtes
+//  applique sur toute les requêtes
 app.use(limiter);
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
